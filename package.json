@@ -1,0 +1,39 @@
+{
+    "name": "share-your-rig",
+    "version": "0.0.1",
+    "description": "",
+    "main": "src/server.js",
+    "scripts": {
+        "test": "mocha --require test/setup.js",
+        "dev": "nodemon src/server.js",
+        "start": "node src/server.js",
+        "migrate:test": "env NODE_ENV=test npm run migrate",
+        "migrate:production": "knex migrate:latest",
+        "update": "ncu - u && npm audit && npm i",
+        "predeploy": "ncu -u && npm audit && heroku run knex migrate:latest",
+        "deploy": "git push heroku master"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "helmet": "^3.22.0",
+        "knex": "^0.21.1",
+        "logger": "0.0.1",
+        "morgan": "^1.10.0",
+        "pg": "^8.2.1",
+        "xss": "^1.0.6"
+    },
+    "devDependencies": {
+        "chai": "^4.2.0",
+        "eslint": "^7.2.0",
+        "eslint-config-airbnb-base": "^14.1.0",
+        "eslint-plugin-import": "^2.20.2",
+        "mocha": "^7.2.0",
+        "nodemon": "^2.0.4",
+        "supertest": "^4.0.2"
+    }
+}
