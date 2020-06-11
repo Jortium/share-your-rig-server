@@ -1,7 +1,7 @@
 exports.up = async function (knex, Promise) {
     await knex.schema.createTable('cpus', (table) => {
         table.increments();
-        table.integer('useridc').references('id').inTable('users');
+        table.integer('user_id').references('id').inTable('users');
         table.text('manufactor').notNullable();
         table.text('model').notNullable();
         table.integer('cores').notNullable();
