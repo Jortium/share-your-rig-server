@@ -1,27 +1,27 @@
 exports.seed = function (knex) {
 // Deletes ALL existing entries
-return knex('cpu').del()
+return knex('cpus').del()
  .then(() =>
    // Inserts seed entries
     // eslint-disable-next-line implicit-arrow-linebreak
-    knex('cpu').insert([
+    knex('cpus').insert([
                {
-                    manufactor: 'Intel', chipset: 'i3-9350KF', cores: 4, frequency: '4.00',
+                    useridc: 1, manufactor: 'Intel', model: 'i3-9350KF', cores: 4,
                 },
                 {
-                    manufactor: 'Intel', chipset: 'i5-8500', cores: 6, frequency: '3.00',
+                    useridc: 2, manufactor: 'Intel', model: 'i5-8500', cores: 6,
                 },
                 {
-                    manufactor: 'Intel', chipset: 'i7-7700K', cores: 4, frequency: '4.20',
+                    useridc: 3, manufactor: 'Intel', model: 'i7-7700K', cores: 4,
                 },
                 {
-                    manufactor: 'AMD', chipset: '1300X', cores: 4, frequency: '3.50',
+                    useridc: 4, manufactor: 'AMD', model: '1300X', cores: 4,
                 },
                 {
-                    manufactor: 'AMD', chipset: 'FX-8170', cores: 8, frequency: '3.90',
+                    useridc: 5, manufactor: 'AMD', model: 'FX-8170', cores: 8,
                 },
                 {
-                    manufactor: 'AMD', chipset: '970', cores: 4, frequency: '4.20',
+                    useridc: 6, manufactor: 'AMD', model: 'Ryzen 7 PRO 3700', cores: 4,
                 },
             ]));
 };
