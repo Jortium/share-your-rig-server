@@ -1,27 +1,27 @@
 const GPUService = {
-    getFolders(knex) {
-      return knex.select('*').from('gpu');
+    getGPU(knex) {
+        return knex.select('*').from('gpus');
     },
     getId(knex, id) {
-      return knex.from('gpu').select('*').where('id', id).first();
+        return knex.from('gpus').select('*').where('id', id).first();
     },
-    postFolder(knex, newGPU) {
-      return knex
-        .insert(newGPU)
-        .into('gpu')
-        .returning('*')
-        .then((rows) => rows[0]);
+    postGPU(knex, newGPU) {
+        return knex
+            .insert(newGPU)
+            .into('gpus')
+            .returning('*')
+            .then((rows) => rows[0]);
     },
-    deleteFolder(knex, id) {
-      return knex('gpu')
-        .where({ id })
-        .delete();
+    deleteGPU(knex, id) {
+        return knex('gpus')
+            .where({ id })
+            .delete();
     },
-    updateFolder(knex, id, fixGPU) {
-      return knex('gpu')
-        .where({ id })
-        .update(fixGPU);
+    updateGPU(knex, id, fixGPU) {
+        return knex('gpus')
+            .where({ id })
+            .update(fixGPU);
     },
-  };
-  
-  module.exports = GPUService;
+};
+
+module.exports = GPUService;

@@ -6,7 +6,7 @@ const helmet = require('helmet');
 const { NODE_ENV } = require('./config');
 const errorHandler = require('./errorHandler');
 const validateBearerToken = require('./validateBearerToken.js');
-const userRouter = require('./users/user-router.js');
+// const userRouter = require('./users/user-router.js');
 const GPURouter = require('./gpu/gpu-router.js');
 const CPURouter = require('./cpu/cpu-router.js');
 
@@ -21,7 +21,7 @@ app.use(validateBearerToken);
 
 app.use('/api/gpu', GPURouter);
 app.use('/api/cpu', CPURouter);
-app.use('/api/users', userRouter);
+// app.use('/api/users', userRouter);
 
 app.get('/', (req, res) => {
     res.send('Hello, boilerplate!');
